@@ -1,0 +1,41 @@
+{
+  "name": "prototypo-account-generator",
+  "version": "0.1.0",
+  "main": "bin/index.js",
+  "description": "Temporary account-generator for Prototypo",
+  "homepage": "https://github.com/byte-foundry/account-generator",
+  "author": {
+    "name": "Louis-Rémi Babé",
+    "email": "lrbabe@gmail.com",
+    "url": "louisremi.com"
+  },
+  "license": "mine",
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "keywords": [],
+  "dependencies": {
+    "colors": "^0.6.2",
+    "connect": "^2.17.3",
+    "aws-sdk": "^2.0.0-rc.19",
+    "raw-body": "^1.1.6",
+    "qs": "^0.6.6",
+    "superagent": "^0.18.0"
+  },
+  "devDependencies": {
+    "grunt-env": "^0.4.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.2.1",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1",
+    "jshint-stylish": "^0.2.0",
+    "supertest": "^0.13.0"
+  },
+  "bin": "bin/index.js",
+  "scripts": {
+    "start": "node bin/index.js"
+  }
+}
