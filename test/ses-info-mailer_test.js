@@ -51,7 +51,7 @@ exports.testSuccessMailer = function(test) {
 			test_ipn: 1,
 			debug_verify: 1,
 			txn_id: '#987654',
-			payer_email: 'job@gmail.com'
+			payer_email: 'lrbabe@gmail.com'
 		}))
 		.expect(200)
 		.end(function() {
