@@ -20,9 +20,7 @@ var email = 'lrbabe+test' + Math.round(Math.random() * 1E6) + '@gmail.com',
 	baseurl = 'http://prototypo.cloudapp.net';
 
 exports.testErrorMailer = function(test) {
-	test.expect(0);
-
-	test.expect(0);
+	test.expect(1);
 
 	request(app)
 		.post('/')
@@ -30,16 +28,15 @@ exports.testErrorMailer = function(test) {
 			txn_id: '#987654',
 			payer_email: 'lrbabe+failed@gmail.com'
 		}))
-		.expect(500, 'Request incomplete')
-		.end(function() {
+		.end(function(err, res) {
+			test.equal(res.status, 500);
+
 			test.done();
 		});
 };
 
 exports.testSuccessMailer = function(test) {
-	test.expect(0);
-
-	test.expect(0);
+	test.expect(1);
 
 	request(app)
 		.post('/?' + qs.stringify({
@@ -51,10 +48,11 @@ exports.testSuccessMailer = function(test) {
 			test_ipn: 1,
 			debug_verify: 1,
 			txn_id: '#987654',
-			payer_email: 'lrbabe@gmail.com'
+			payer_email: 'lrbabe+payer@gmail.com'
 		}))
-		.expect(200)
-		.end(function() {
+		.end(function(err, res) {
+			test.equal(res.status, 200);
+
 			test.done();
 		});
 };
