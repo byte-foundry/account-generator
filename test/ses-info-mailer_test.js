@@ -29,7 +29,7 @@ exports.testErrorMailer = function(test) {
 			payer_email: 'lrbabe+failed@gmail.com'
 		}))
 		.end(function(err, res) {
-			test.equal(res.status, 500);
+			test.equal(res.status, 202);
 
 			test.done();
 		});

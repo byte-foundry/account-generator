@@ -58,7 +58,7 @@ exports.testDuplicateUsername = function(test) {
 		}))
 		.end(function(err, res) {
 
-			test.equal(res.status, 409);
+			test.equal(res.status, 202);
 			test.equal(res.body.error.split('\n')[0], 'Account creation failed');
 
 			test.done();

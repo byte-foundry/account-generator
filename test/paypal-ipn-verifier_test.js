@@ -29,7 +29,7 @@ exports.testVerificationFailed = function(test) {
 			payer_email: 'job@gmail.com'
 		}))
 		.end(function(err, res) {
-			test.equal(res.status, 500);
+			test.equal(res.status, 202);
 			test.equal(res.body.error.split('\n')[0], 'Paypal ipn verification failed');
 			test.done();
 		});
